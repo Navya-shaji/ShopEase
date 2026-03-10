@@ -31,7 +31,7 @@ app.get('/api/products', async (req, res) => {
 });
 
 // Seed data route - run once to populate DB
-app.post('/api/products/seed', async (req, res) => {
+app.get('/api/products/seed', async (req, res) => {
   try {
     const defaultProducts = [
       { name: 'Wireless Headphones', description: 'Noise-cancelling over-ear headphones.', price: 199.99, image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&q=80', category: 'Electronics' },
