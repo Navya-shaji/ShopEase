@@ -12,7 +12,6 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
-// Get all products. Implement filtering if query params are present
 app.get('/api/products', async (req, res) => {
   try {
     const { category, search } = req.query;
@@ -30,7 +29,6 @@ app.get('/api/products', async (req, res) => {
   }
 });
 
-// Seed data route - run once to populate DB
 app.get('/api/products/seed', async (req, res) => {
   try {
     const defaultProducts = [
@@ -49,7 +47,6 @@ app.get('/api/products/seed', async (req, res) => {
   }
 });
 
-// Connect to MongoDB and start server
 const PORT = process.env.PORT || 5000;
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
